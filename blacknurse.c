@@ -40,6 +40,7 @@ int main(int argc, char *argv[])
     }
     if ((kindy = socket(AF_INET, SOCK_RAW, IPPROTO_ICMP)) == -1) {
         perror("socket");
+        freeaddrinfo(ai);
         exit(1);
     }
     pkt = pkt_template;
@@ -59,7 +60,6 @@ int main(int argc, char *argv[])
             break;
         }
     }
-    /* NOTREACHED */
     close(kindy);
     freeaddrinfo(ai);
 

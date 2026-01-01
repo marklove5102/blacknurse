@@ -31,3 +31,11 @@
 # Debug files
 *.dSYM/
 *.su
+
+# Backup files
+*~
+
+# Build output
+/blacknurse
+*.plist
+LOG.md
